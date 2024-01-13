@@ -9,8 +9,9 @@
 
 ## OWNERS 
 
-[owner](https://t.me/HORRIDduo)
-[owner](https://t.me/aktelegram1)
+[HORRID](https://t.me/HORRIDduo)
+
+[Albert Einstein](https://t.me/aktelegram1)
 
 ## Features
 
