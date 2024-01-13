@@ -10,6 +10,7 @@
 ## OWNERS 
 
 [owner](https://t.me/HORRIDduo)
+[owner](https://t.me/aktelegram1)
 
 ## Features
 
