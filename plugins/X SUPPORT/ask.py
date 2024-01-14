@@ -1,5 +1,5 @@
 # x  bots 
-from pyrogram import Client, filters
+from pyrogram import Client, filters, enums
 import requests
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from info import LOG_CHANNEL, GOOGLE_API_KEY, SUPPORT_CHAT_ID, SUPPORT_LINK
@@ -10,12 +10,17 @@ genai.configure(api_key=GOOGLE_API_KEY) # add your api key in info.py
 @Client.on_message(filters.command("ask"))
 async def ai_generate(client, message):   
    if message.chat.id != SUPPORT_CHAT_ID:
-      user_input = message.text.split()[1:]
+        btn = [[
+            InlineKeyboardButton('Support Group', url=SUPPORT_LINK)
+        ]]
+        return await message.reply("This command only working in support group.", reply_markup=InlineKeyboardMarkup(btn))
+    try:
+        text = message.text.split(" ", 1)[1]
+    except:
+        return await message.reply_text("Give an input!")
+    msg = await message.reply("Searching...")
         
   
-   if not user_input:
-       await message.reply_text("Please provide your question after /ask")
-       return
 
    user_input = " ".join(user_input)
 
