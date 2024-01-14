@@ -1,15 +1,15 @@
-# sd bots
 
 from pyrogram import Client, filters
 import requests
-from info import REQUESTED_CHANNEL, GOOGLE_API_KEY
+from info import LOG_CHANNEL, GOOGLE_API_KEY, SUPPORT_CHAT_ID
 import google.generativeai as genai
-# how to get the api key == https://t.me/sd_bots/256 (copy this link and search on telegram)
+
 
 genai.configure(api_key=GOOGLE_API_KEY)
 
 @Client.on_message(filters.command("ask"))
 async def ai_generate(client, message):
+   if message.chat.id == SUPPORT_CHAT_ID:
    user_input = message.text.split()[1:]
 
    if not user_input:
@@ -53,4 +53,4 @@ async def ai_generate(client, message):
    prompt_parts = [user_input]
    response = model.generate_content(prompt_parts)
    await message.reply_text(response.text)
-   await client.send_message(REQUESTED_CHANNEL, text=f"#google_ai ʀᴇǫᴜᴇsᴛ ғʀᴏᴍ {message.from_user.mention}\nǫᴜᴇʀʏ ɪs:- {user_input}")
+   await client.send_message(LOG_CHANNEL, text=f"#google_ai ʀᴇǫᴜᴇsᴛ ғʀᴏᴍ {message.from_user.mention}\nǫᴜᴇʀʏ ɪs:- {user_input}")
