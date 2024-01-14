@@ -16,9 +16,9 @@ class script(object):
 ✯ 𝙱𝚄𝙸𝙻𝙳 𝚂𝚃𝙰𝚃𝚄𝚂: v2.0.1 [ 𝙱𝙴𝚃𝙰 ]</b>"""
 
     SOURCE_TXT = """<b>NOTE:</b>
-<b>- THIS IS NOT A OPENEN PROJECT YOU WANT REPO CONTACT MY OWNER YOU LICKY YOU CANT GET REPO</b>
-<b>DEVS:</b>
-- <a href=https://t.me/HORRIDduo>HORRID</a>"""
+<b>-THIS BOT REPO IS Open Project</b>
+<b>REPO:</b>
+- <a href=https://github.com/Naruto46i/NARUTO-AUTO-FILTER-V-1/tree/main>CLICK HERE</a>"""
 
     MANUELFILTER_TXT = """Help: <b>Filters</b>
 
