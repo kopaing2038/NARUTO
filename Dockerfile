@@ -2,6 +2,7 @@ FROM python:3.10
 
 RUN apt update && apt upgrade -y
 RUN apt install git -y
+RUN pip install google-generativeai
 COPY requirements.txt /requirements.txt
 
 RUN cd /
