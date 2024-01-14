@@ -12,7 +12,7 @@ async def ai_generate(client, message):
     if message.chat.id != SUPPORT_CHAT_ID:
            
        return await message.reply_text("Please provide your question after /ask")
-       
+       return
 
    user_input = " ".join(user_input)
 
