@@ -1,14 +1,20 @@
 # x  bots 
 from pyrogram import Client, filters
 import requests
-from info import LOG_CHANNEL, GOOGLE_API_KEY
+from info import LOG_CHANNEL, GOOGLE_API_KEY, SUPPORT_CHAT_ID, SUPPORT_LINK
 import google.generativeai as genai
 
 genai.configure(api_key=GOOGLE_API_KEY) # add your api key in info.py
 
 @Client.on_message(filters.command("ask"))
-async def ai_generate(client, message):
+async def ai_generate(client, message):   
    user_input = message.text.split()[1:]
+   return await message.reply("OPENAI_API is empty")
+    if message.chat.id != SUPPORT_CHAT_ID:
+        btn = [[
+            InlineKeyboardButton('Support Group', url=SUPPORT_LINK)
+        ]]
+        return await message.reply("This command only working in support group.", reply_markup=InlineKeyboardMarkup(btn))
 
    if not user_input:
        await message.reply_text("Please provide your question after /ask")
