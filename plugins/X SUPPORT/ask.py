@@ -1,6 +1,7 @@
 # x  bots 
 from pyrogram import Client, filters
 import requests
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from info import LOG_CHANNEL, GOOGLE_API_KEY, SUPPORT_CHAT_ID, SUPPORT_LINK
 import google.generativeai as genai
 
