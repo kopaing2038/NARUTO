@@ -37,4 +37,3 @@ python-math
 Pillow
 speedtest-cli
 openai
-google
