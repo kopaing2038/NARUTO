@@ -9,7 +9,7 @@ genai.configure(api_key=GOOGLE_API_KEY) # add your api key in info.py
 
 @Client.on_message(filters.command("ask"))
 async def ai_generate(client, message):   
-   if message.chat.id != SUPPORT_CHAT_ID:
+    if message.chat.id != SUPPORT_GROUP:
         btn = [[
             InlineKeyboardButton('Support Group', url=SUPPORT_LINK)
         ]]
