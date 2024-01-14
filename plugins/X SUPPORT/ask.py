@@ -10,7 +10,7 @@ genai.configure(api_key=GOOGLE_API_KEY)
 @Client.on_message(filters.command("ask"))
 async def ai_generate(client, message):
     if message.chat.id != SUPPORT_CHAT_ID:
-    try:        
+           
        return await message.reply_text("Please provide your question after /ask")
        
 
