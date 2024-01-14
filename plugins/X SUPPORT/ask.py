@@ -10,12 +10,9 @@ genai.configure(api_key=GOOGLE_API_KEY) # add your api key in info.py
 @Client.on_message(filters.command("ask"))
 async def ai_generate(client, message):   
    if message.chat.id != SUPPORT_CHAT_ID:
-        btn = [[
-            InlineKeyboardButton('Support Group', url=SUPPORT_LINK)
-        ]]
-        return await message.reply("This command only working in support group.", reply_markup=InlineKeyboardMarkup(btn))
-    try:
-       user_input = message.text.split()[1:]
+      user_input = message.text.split()[1:]
+        
+  
    if not user_input:
        await message.reply_text("Please provide your question after /ask")
        return
