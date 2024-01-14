@@ -2,7 +2,7 @@
 from pyrogram import Client, filters
 import requests
 from info import LOG_CHANNEL, GOOGLE_API_KEY
-import google.generativeai as genai 
+from google import generativeai as genai 
 
 genai.configure(api_key=GOOGLE_API_KEY) # add your api key in info.py
 
