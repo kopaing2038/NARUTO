@@ -225,7 +225,7 @@ async def next_page(bot, query):
         off_set = offset - 10
     if n_offset == 0:
         btn.append(
-            [InlineKeyboardButton("⌫ 𝐁𝐀𝐂𝐊", callback_data=f"next_{req}_{key}_{off_set}"),
+            [InlineKeyboardButton(" 𝐁𝐀𝐂𝐊", callback_data=f"next_{req}_{key}_{off_set}"),
              InlineKeyboardButton(f"𝐏𝐀𝐆𝐄 {math.ceil(int(offset) / 7) + 1} / {math.ceil(total / 7)}",
                                   callback_data="pages")]
         )
@@ -820,7 +820,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                   ],[
                     InlineKeyboardButton('🍁 Oᴡɴᴇʀ', url='https://t.me/HORRIDduo'),
-                    InlineKeyboardButton('🌿 Sᴜᴘᴘᴏʀᴛ', callback_data="spc")
+                    InlineKeyboardButton('🌿 Sᴜᴘᴘᴏʀᴛ', callback_data="spu")
                   ],[
                     InlineKeyboardButton('❗ Hᴇʟᴘ', callback_data='help'),
                     InlineKeyboardButton('🕵️ Aʙᴏᴜᴛ', callback_data='about'),
@@ -933,6 +933,24 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
+    elif query.data == "spu":
+        buttons = [[
+            InlineKeyboardButton('Log', url="https://t.me/botuptest")
+            ], [
+                InlineKeyboardButton('Gʀᴏᴜᴘ', url='t.me/bjuhkgh'),
+                InlineKeyboardButton('Cʜᴀɴɴᴇʟ', url='https://tm/myre')
+            ], [
+                InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ', url='https://t.me/XBOTSUPPORTS'),
+                InlineKeyboardButton('Uᴘᴅᴀᴛᴇs', url='https://t.me/botuptest')
+            ], [
+                InlineKeyboardButton("⟸ Bᴀᴄᴋ", callback_data="start")
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.KD_CNL,
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
     elif query.data == "disc":
         buttons = [[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='about')
@@ -945,7 +963,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "source":
         buttons = [[
-            InlineKeyboardButton('OWNER', url='https://t.me/HORRIDduo'),
+            InlineKeyboardButton('Repo', url='https://github.com/Naruto46i/NARUTO-AUTO-FILTER-V-1/tree/main'),
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
