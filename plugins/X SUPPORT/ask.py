@@ -14,7 +14,6 @@ async def ai_generate(client, message):
        return await message.reply_text("Please provide your question after /ask")
        
 
-   user_input = message.text.split()[1:]
    user_input = " ".join(user_input)
 
    generation_config = {
