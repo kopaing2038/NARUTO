@@ -937,13 +937,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('Log', url="https://t.me/botuptest")
             ], [
-                InlineKeyboardButton('Gʀᴏᴜᴘ', url='t.me/bjuhkgh'),
-                InlineKeyboardButton('Cʜᴀɴɴᴇʟ', url='https://tm/myre')
+            InlineKeyboardButton('Gʀᴏᴜᴘ', url='t.me/bjuhkgh'),
+            InlineKeyboardButton('Cʜᴀɴɴᴇʟ', url='https://tm/myre')
             ], [
-                InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ', url='https://t.me/XBOTSUPPORTS'),
-                InlineKeyboardButton('Uᴘᴅᴀᴛᴇs', url='https://t.me/botuptest')
+            InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ', url='https://t.me/XBOTSUPPORTS'),
+            InlineKeyboardButton('Uᴘᴅᴀᴛᴇs', url='https://t.me/botuptest')
             ], [
-                InlineKeyboardButton("⟸ Bᴀᴄᴋ", callback_data="start")
+            InlineKeyboardButton("⟸ Bᴀᴄᴋ", callback_data="start")
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
