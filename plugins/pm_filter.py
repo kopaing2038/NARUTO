@@ -935,10 +935,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "spu":
         buttons = [[
-            InlineKeyboardButton('Log', url="https://t.me/botuptest"),
-            ], [
-            InlineKeyboardButton('Gʀᴏᴜᴘ', url='t.me/bjuhkgh'),
-            InlineKeyboardButton('Cʜᴀɴɴᴇʟ', url='https://tm/myre'),
+            InlineKeyboardButton('Gʀᴏᴜᴘ', url='https://t.me/HORRIDduo'),
+            InlineKeyboardButton('Cʜᴀɴɴᴇʟ', url='https://t.me/HORRIDduo'),
             ], [
             InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ', url='https://t.me/XBOTSUPPORTS'),
             InlineKeyboardButton('Uᴘᴅᴀᴛᴇs', url='https://t.me/botuptest'),
