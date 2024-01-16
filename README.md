@@ -11,7 +11,6 @@
 
 [HORRID](https://t.me/HORRIDduo)
 
-[Albert Einstein](https://t.me/aktelegram1)
 
 ## Features
 
