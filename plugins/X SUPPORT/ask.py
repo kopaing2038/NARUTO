@@ -5,7 +5,7 @@ import google.generativeai as genai
 
 genai.configure(api_key=GOOGLE_API_KEY)
 
-@Client.on_message(filters.command('ask') & filters.chat(SUPPORT_CHAT_ID))
+@Client.on_message(filters.command('ask') & filters.chat(SUPPORT_CHAT_ID)) # support work only added 
 async def ai_generate(client, message):
    user_input = message.text.split()[1:]
 
