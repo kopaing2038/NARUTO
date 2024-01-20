@@ -1,16 +1,16 @@
 from pyrogram import Client, filters
 import requests
-from info import LOG_CHANNEL, GOOGLE_API_KEY
+from info import LOG_CHANNEL, GOOGLE_API_KEY, SUPPORT_CHAT_ID
 import google.generativeai as genai
 
 genai.configure(api_key=GOOGLE_API_KEY)
 
-@Client.on_message(filters.command("ask"))
+@Client.on_message(filters.command('ask') & filters.chat(SUPPORT_CHAT_ID))
 async def ai_generate(client, message):
    user_input = message.text.split()[1:]
 
    if not user_input:
-       await message.reply_text("GIVE ANY INPUT ")
+       await message.reply_text("command incomplete provide /ask hello")
        return
 
    user_input = " ".join(user_input)
@@ -49,5 +49,14 @@ async def ai_generate(client, message):
 
    prompt_parts = [user_input]
    response = model.generate_content(prompt_parts)
-   await message.reply_text(response.text)
-   await client.send_message(LOG_CHANNEL, text=f"#google_ai ʀᴇǫᴜᴇsᴛ ғʀᴏᴍ {message.from_user.mention}\nǫᴜᴇʀʏ ɪs:- {user_input}")
+   await message.reply_text(text=f"ʜᴇʏ {message.from_user.mention}\n ǫᴜᴇʀʏ ɪs:- {user_input}\n\nResults:\n\n{response.text}")         
+   await client.send_message(LOG_CHANNEL, text=f"#ask ʀᴇǫᴜᴇsᴛ ғʀᴏᴍ {message.from_user.mention}\nǫᴜᴇʀʏ ɪs:- {user_input}")
+   await s.delete()
+
+@Client.on_message(filters.command("ask"))
+async def ai_generate_private(client, message):
+  buttons = [[
+    InlineKeyboardButton("SᑌᑭᑭOᖇT GᖇOᑌᑭ ", url="https://t.me/XBOTSUPPORTS")
+  ]]
+  reply_markup = InlineKeyboardMarkup(buttons)
+  await message.reply_text(text=f"ʜᴇʏ {message.from_user.mention}\nᴜsᴇ ᴛʜɪs ғᴇᴀᴛᴜʀᴇ ɪn SᑌᑭᑭOᖇT GᖇOᑌᑭ  👇 ", reply_markup=reply_markup)
