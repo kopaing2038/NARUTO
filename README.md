@@ -41,6 +41,7 @@
 - [x] translate
 - [x] PreDVD and CamRip Delete Mode
 - [x] Multiple File Deletion
+- [x] Google Ai
 
 ## Variables
 
