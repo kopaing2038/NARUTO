@@ -691,9 +691,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         reply_markup=InlineKeyboardMarkup(
                             [
                                 [
-                                    InlineKeyboardButton('📥 𝖣𝗈𝗐𝗇𝗅𝗈𝖺𝖽 𝖫𝗂𝗇𝗄 📥 ', url=file_send.link)
+                                    InlineKeyboardButton('📥 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐋𝐢𝐧𝐤 📥 ', url=file_send.link)
                                 ], [
-                                InlineKeyboardButton("⚠️ 𝖢𝖺𝗇'𝗍 𝖠𝖼𝖼𝖾𝗌𝗌 ❓ 𝖢𝗅𝗂𝖼𝗄 𝖧𝖾𝗋𝖾 ⚠️", url=(FILE_FORWARD))
+                                InlineKeyboardButton("⚠️ 𝐂𝐚𝐧'𝐭 𝐀𝐜𝐜𝐞𝐬𝐬 ❓ 𝐂𝐥𝐢𝐜𝐤 𝐇𝐞𝐫𝐞 ⚠️", url=(FILE_FORWARD))
                             ]
                             ]
                         )
@@ -702,6 +702,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         await asyncio.sleep(600)
                         await Joel_tgx.delete()
                         await file_send.delete()
+                    k = await client.send_message(
+                        chat_id=FILE_CHANNEL,                        
+                        text=script.DONE_MSG.format(query.from_user.mention, title, size),
+                        parse_mode=enums.ParseMode.HTML,
+                        reply_markup=InlineKeyboardMarkup(
+                            [
+                                [
+                                    InlineKeyboardButton("🔥 ᴄʜᴀɴɴᴇʟ 🔥", url=(MAIN_CHANNEL))
+                                ]
+                            ]
+                        )
+                    )
+                    await asyncio.sleep(180)
+                    await k.delete()
                 else:
                     await query.answer(
                         f"Hᴇʏ {query.from_user.first_name}, Tʜɪs Is Nᴏᴛ Yᴏᴜʀ Mᴏᴠɪᴇ Rᴇǫᴜᴇsᴛ. Rᴇǫᴜᴇsᴛ Yᴏᴜʀ's !",
@@ -1406,7 +1420,7 @@ async def auto_filter(client, msg, spoll=False):
             btn = [
                 [
                     InlineKeyboardButton(
-                        text=f"📂{file.file_name}",
+                        text=f"📤{file.file_name}📥",
                         callback_data=f'{pre}#{file.file_id}',
                     ),
                     InlineKeyboardButton(
@@ -1429,12 +1443,18 @@ async def auto_filter(client, msg, spoll=False):
                    InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs​", callback_data=f"languages#{search.replace(' ', '_')}#{key}")
                ]
               )
+    await msg.reply_chat_action(enums.ChatAction.TYPING)
+    px = await message.reply_text(f"{search}, 𝐒𝐞𝐚𝐫𝐜𝐡𝐢𝐧𝐠...!!!!", quote=True)
+    await px.edit_text(text=f"𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥 {str(total_results)} 𝐅𝐢𝐥𝐞𝐬.")
+    await asyncio.sleep(1)
+    await px.delete()
+    
     if offset != "":
         key = f"{message.chat.id}-{message.id}"
         BUTTONS[key] = search
         req = message.from_user.id if message.from_user else 0
         btn.append(
-            [InlineKeyboardButton(text=f"📒ᕈΔGE 1/{math.ceil(int(total_results) / 7)}", callback_data="pages"),
+            [InlineKeyboardButton(text=f"💡𝐏𝐚𝐠𝐞💡 1/{math.ceil(int(total_results) / 7)}", callback_data="pages"),
              InlineKeyboardButton(text="ПΣXƬ", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
