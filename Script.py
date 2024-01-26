@@ -286,9 +286,18 @@ Name - {}
 ©{message.chat.title}</b>
 """
 
-    CUSTOM_FILE_CAPTION = """<b>📂 Fɪʟᴇ ɴᴀᴍᴇ : {file_name}
+    CUSTOM_FILE_CAPTION = """
+<b>📂 Fɪʟᴇ ɴᴀᴍᴇ : {file_name}
 
-</b>"""
+⚙️ Size » {file_size}
+
+❛ @Mc_films_channel ❜
+
+🔗 Group & Channel Link👇🏼
+➠ https://t.me/Mc_films_Group
+
+💎 @Mc_films_channel
+✅ Join Now » @Mcmovielist🪄 </b>
 
     RESTART_TXT = """
 <b>Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ !
