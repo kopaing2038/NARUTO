@@ -297,7 +297,7 @@ Name - {}
 ➠ https://t.me/Mc_films_Group
 
 💎 @Mc_films_channel
-✅ Join Now » @Mcmovielist🪄 </b>
+✅ Join Now » @Mcmovielist🪄 </b>"""
 
     RESTART_TXT = """
 <b>Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ !
